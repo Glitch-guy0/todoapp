@@ -39,9 +39,9 @@ export default function rootPage() {
     <>
       <div className="h-full w-full bg-zinc-900 text-white overflow-y-auto">
         <div className="max-w-[800px] m-auto pt-[1px]">
-          <form onSubmit={(e) => { e.preventDefault() }} className="flex flex-wrap gap-4 mt-8 p-2 rounded ">
-            <input required value={userInput.course} onChange={(e) => { setInput({ ...userInput, course: e.target.value }) }} placeholder="Course" type="text" name="task" className="outline-none rounded bg-transparent/40 px-2 grow placeholder:text-zinc-500/60 h-[50px]" />
-            <input required value={userInput.trainer} onChange={(e) => { setInput({ ...userInput, trainer: e.target.value }) }} placeholder="Trainer" type="text" name="task" className="outline-none rounded bg-transparent/40 px-2 grow placeholder:text-zinc-500/60" />
+          <form onSubmit={(e) => { e.preventDefault() }} className="flex flex-col sm:flex-row gap-4 mt-8 p-2 rounded">
+            <input required value={userInput.course} onChange={(e) => { setInput({ ...userInput, course: e.target.value }) }} placeholder="Course" type="text" name="task" className="outline-none rounded bg-transparent/40 px-4 py-3 grow placeholder:text-zinc-500/60" />
+            <input required value={userInput.trainer} onChange={(e) => { setInput({ ...userInput, trainer: e.target.value }) }} placeholder="Trainer" type="text" name="task" className="outline-none rounded bg-transparent/40 px-4 py-3 grow placeholder:text-zinc-500/60" />
             <button onClick={() => submitHandler()} type="submit" className="bg-blue-500 hover:bg-blue-500/80 px-4 py-2 rounded font-bold">{isLoading ? <LoadingButton/> : "Add"}</button>
           </form>
           <div className="ring-1 mt-8 mx-8 ring-zinc-800 "></div>
